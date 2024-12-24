@@ -1,0 +1,39 @@
+{
+  "id": "global_menu",
+  "type": "SharedSlice",
+  "name": "GlobalMenu",
+  "description": "GlobalMenu",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "menu_items": {
+          "type": "Group",
+          "config": {
+            "label": "menu items",
+            "repeat": true,
+            "fields": {
+              "menu_items": {
+                "type": "Link",
+                "config": {
+                  "label": "menu items",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
