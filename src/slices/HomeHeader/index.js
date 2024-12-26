@@ -1,3 +1,4 @@
+"use client";
 /**
  * @typedef {import("@prismicio/client").Content.HomeHeaderSlice} HomeHeaderSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<HomeHeaderSlice>} HomeHeaderProps
@@ -5,31 +6,42 @@
  */
 
 import Image from "next/image";
+import {
+  MouseParallaxContainer,
+  MouseParallaxChild,
+} from "react-parallax-mouse";
 
 const HomeHeader = ({ slice }) => {
   console.log("hello", slice.primary.bgimage[0].bgimage2.url);
 
   return (
     <section
-      className="w-screen"
+      className="w-screen overflow-hidden"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="font-bold mt-8 mb-2 text-center relative">
+      <div data-scroll className="font-bold mt-8 mb-2 text-center ">
         {slice.primary.header}
       </div>
-      <div
-        className="min-h-screen bg-center relative z-0"
-        style={{
-          backgroundImage: `url(${slice.primary.bgimage[0].bgimage.url})`,
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="">
+      <MouseParallaxContainer globalFactorX={0.3} globalFactorY={0.3}>
+        <MouseParallaxChild
+          factorX={0.1}
+          factorY={0.1}
+          className="min-h-screen bg-center relative"
+          style={{
+            backgroundImage: `url(${slice.primary.bgimage[0].bgimage.url})`,
+            backgroundSize: "cover",
+          }}
+        >
           {slice.primary.images.map((item, index) => {
             if (index === 0) {
               return (
-                <div key={index} className="absolute top-20 left-28 z-10">
+                <MouseParallaxChild
+                  key={index}
+                  className="absolute left-60 top-20 z-10"
+                  factorX={0.3}
+                  factorY={0.5}
+                >
                   <Image
                     index={index}
                     src={item.image.url}
@@ -37,12 +49,17 @@ const HomeHeader = ({ slice }) => {
                     width={item.image.dimensions.width}
                     height={item.image.dimensions.height}
                   />
-                </div>
+                </MouseParallaxChild>
               );
             }
             if (index === 1) {
               return (
-                <div key={index} className="absolute top-5 right-80">
+                <MouseParallaxChild
+                  factorX={0.7}
+                  factorY={0.8}
+                  key={index}
+                  className="absolute top-10 right-96 z-30"
+                >
                   <Image
                     index={index}
                     src={item.image.url}
@@ -50,12 +67,17 @@ const HomeHeader = ({ slice }) => {
                     width={item.image.dimensions.width}
                     height={item.image.dimensions.height}
                   />
-                </div>
+                </MouseParallaxChild>
               );
             }
             if (index === 2) {
               return (
-                <div key={index} className="absolute right-10 top-36 z-20">
+                <MouseParallaxChild
+                  factorX={0.2}
+                  factorY={0.9}
+                  key={index}
+                  className="absolute right-10 top-36 z-10"
+                >
                   <Image
                     index={index}
                     src={item.image.url}
@@ -63,12 +85,17 @@ const HomeHeader = ({ slice }) => {
                     width={item.image.dimensions.width}
                     height={item.image.dimensions.height}
                   />
-                </div>
+                </MouseParallaxChild>
               );
             }
             if (index === 3) {
               return (
-                <div key={index} className="absolute right-52 top-72 ">
+                <MouseParallaxChild
+                  factorX={0.9}
+                  factorY={0.3}
+                  key={index}
+                  className="absolute right-72 top-72 "
+                >
                   <Image
                     index={index}
                     src={item.image.url}
@@ -76,12 +103,17 @@ const HomeHeader = ({ slice }) => {
                     width={item.image.dimensions.width}
                     height={item.image.dimensions.height}
                   />
-                </div>
+                </MouseParallaxChild>
               );
             }
             if (index === 4) {
               return (
-                <div key={index} className="absolute left-10 bottom-80 ">
+                <MouseParallaxChild
+                  factorX={0.5}
+                  factorY={0.2}
+                  key={index}
+                  className="absolute left-36 top-2/4 "
+                >
                   <Image
                     index={index}
                     src={item.image.url}
@@ -89,19 +121,12 @@ const HomeHeader = ({ slice }) => {
                     width={item.image.dimensions.width}
                     height={item.image.dimensions.height}
                   />
-                </div>
+                </MouseParallaxChild>
               );
             }
           })}
-        </div>
-        <div
-          className="h-20 bg-center bottom-0  z-0"
-          style={{
-            backgroundImage: `url(${slice.primary.bgimage[0].bgimage2.url})`,
-            backgroundSize: "cover",
-          }}
-        />
-      </div>
+        </MouseParallaxChild>
+      </MouseParallaxContainer>
     </section>
   );
 };
