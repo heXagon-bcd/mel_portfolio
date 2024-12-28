@@ -12,11 +12,11 @@ import {
 } from "react-parallax-mouse";
 
 const HomeHeader = ({ slice }) => {
-  console.log("hello", slice.primary.bgimage[0].bgimage2.url);
+  console.log("hello", slice.primary.bgimage.bgiamge2);
 
   return (
     <section
-      className="w-screen overflow-hidden"
+      className="overflow-hidden h-max "
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -27,10 +27,11 @@ const HomeHeader = ({ slice }) => {
         <MouseParallaxChild
           factorX={0.1}
           factorY={0.1}
-          className="min-h-screen bg-center relative"
+          className="min-h-screen relative"
           style={{
             backgroundImage: `url(${slice.primary.bgimage[0].bgimage.url})`,
-            backgroundSize: "cover",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
           }}
         >
           {slice.primary.images.map((item, index) => {
@@ -126,6 +127,15 @@ const HomeHeader = ({ slice }) => {
             }
           })}
         </MouseParallaxChild>
+        <div
+          className="w-screen"
+          style={{
+            backgroundImage: `url(${slice.primary.bgimage[0].bgimage2.url})`,
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            zIndex: 20, // above the child images if you want it in front
+          }}
+        />
       </MouseParallaxContainer>
     </section>
   );

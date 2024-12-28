@@ -10,13 +10,17 @@ export default async function Page({ params }) {
   const page = await client.getSingle("home").catch(() => notFound());
 
   return (
-    <div className="flex flex-row">
-      <NavBar className="fixed" />
-      <SliceZone
-        className="flex-1"
-        slices={page.data.slices}
-        components={components}
-      />
+    <div className="relative flex">
+      <div className="h-fit bg-holidaygreen">
+        <NavBar className=" " />
+      </div>
+      <div className="flex flex-col w-[calc(100%-4rem)] h-screen ">
+        <SliceZone
+          className=""
+          slices={page.data.slices}
+          components={components}
+        />
+      </div>
     </div>
   );
 }

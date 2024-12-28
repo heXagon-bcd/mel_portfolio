@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "one": {
+              "type": "SharedSlice"
+            },
+            "clients": {
+              "type": "SharedSlice"
+            },
             "global_menu": {
               "type": "SharedSlice"
             },

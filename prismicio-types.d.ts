@@ -38,7 +38,11 @@ export type GlobalnavDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomeDocumentDataSlicesSlice = GlobalMenuSlice | HomeHeaderSlice;
+type HomeDocumentDataSlicesSlice =
+  | OneSlice
+  | ClientsSlice
+  | GlobalMenuSlice
+  | HomeHeaderSlice;
 
 /**
  * Content for home documents
@@ -100,6 +104,78 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 export type AllDocumentTypes = GlobalnavDocument | HomeDocument;
+
+/**
+ * Item in *Clients → Default → Primary → clientRoster*
+ */
+export interface ClientsSliceDefaultPrimaryClientrosterItem {
+  /**
+   * image field in *Clients → Default → Primary → clientRoster*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clients.default.primary.clientroster[].client
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  client: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Clients → Default → Primary*
+ */
+export interface ClientsSliceDefaultPrimary {
+  /**
+   * bgimage field in *Clients → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clients.default.primary.bgimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  bgimage: prismic.ImageField<never>;
+
+  /**
+   * clientRoster field in *Clients → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clients.default.primary.clientroster[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  clientroster: prismic.GroupField<
+    Simplify<ClientsSliceDefaultPrimaryClientrosterItem>
+  >;
+}
+
+/**
+ * Default variation for Clients Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ClientsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ClientsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Clients*
+ */
+type ClientsSliceVariation = ClientsSliceDefault;
+
+/**
+ * Clients Shared Slice
+ *
+ * - **API ID**: `clients`
+ * - **Description**: Clients
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ClientsSlice = prismic.SharedSlice<
+  "clients",
+  ClientsSliceVariation
+>;
 
 /**
  * Item in *GlobalMenu → Default → Primary → menu items*
@@ -270,6 +346,68 @@ export type HomeHeaderSlice = prismic.SharedSlice<
   HomeHeaderSliceVariation
 >;
 
+/**
+ * Primary content in *One → Default → Primary*
+ */
+export interface OneSliceDefaultPrimary {
+  /**
+   * image1 field in *One → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.image1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image1: prismic.ImageField<never>;
+
+  /**
+   * image2 field in *One → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.image2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image2: prismic.ImageField<never>;
+
+  /**
+   * image3 field in *One → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.image3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image3: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for One Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OneSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OneSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *One*
+ */
+type OneSliceVariation = OneSliceDefault;
+
+/**
+ * One Shared Slice
+ *
+ * - **API ID**: `one`
+ * - **Description**: One
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OneSlice = prismic.SharedSlice<"one", OneSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -298,6 +436,11 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ClientsSlice,
+      ClientsSliceDefaultPrimaryClientrosterItem,
+      ClientsSliceDefaultPrimary,
+      ClientsSliceVariation,
+      ClientsSliceDefault,
       GlobalMenuSlice,
       GlobalMenuSliceDefaultPrimaryMenuItemsItem,
       GlobalMenuSliceDefaultPrimary,
@@ -309,6 +452,10 @@ declare module "@prismicio/client" {
       HomeHeaderSliceDefaultPrimary,
       HomeHeaderSliceVariation,
       HomeHeaderSliceDefault,
+      OneSlice,
+      OneSliceDefaultPrimary,
+      OneSliceVariation,
+      OneSliceDefault,
     };
   }
 }

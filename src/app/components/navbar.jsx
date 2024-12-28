@@ -8,12 +8,13 @@ const menu = [
 
 export default function NavBar() {
   return (
-    <div className="bg-holidaygreen  min-h-screen">
-      {menu.map((item) => {
+    <div className="bg-holidaygreen sticky top-0 self-start min-h-lvh w-16">
+      {menu.map((item, index) => {
         return (
           <div
             className={`text-white font-extrabold text-xl [writing-mode:vertical-rl]
-            rotate-180 ${item.id === 1 ? `mb-32 mt-32` : "mb-32"} text-center ml-4 mr-6`}
+            rotate-180 ${item.id === 1 ? `pb-32 pt-32` : "pt-32"} text-center pl-4 pr-4`}
+            key={index}
           >
             {item.name}
           </div>

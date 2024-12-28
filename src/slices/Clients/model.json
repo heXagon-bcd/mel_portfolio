@@ -1,0 +1,44 @@
+{
+  "id": "clients",
+  "type": "SharedSlice",
+  "name": "Clients",
+  "description": "Clients",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "bgimage": {
+          "type": "Image",
+          "config": {
+            "label": "bgimage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "clientroster": {
+          "type": "Group",
+          "config": {
+            "label": "clientRoster",
+            "repeat": true,
+            "fields": {
+              "client": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
