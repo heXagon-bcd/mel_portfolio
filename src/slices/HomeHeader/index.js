@@ -16,7 +16,7 @@ const HomeHeader = ({ slice }) => {
 
   return (
     <section
-      className="overflow-hidden h-max "
+      className=" h-max relative "
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -27,11 +27,10 @@ const HomeHeader = ({ slice }) => {
         <MouseParallaxChild
           factorX={0.1}
           factorY={0.1}
-          className="min-h-screen relative"
+          className="h-[48rem] relative"
           style={{
             backgroundImage: `url(${slice.primary.bgimage[0].bgimage.url})`,
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
           }}
         >
           {slice.primary.images.map((item, index) => {
@@ -127,7 +126,7 @@ const HomeHeader = ({ slice }) => {
             }
           })}
         </MouseParallaxChild>
-        <div
+        {/* <div
           className="w-screen"
           style={{
             backgroundImage: `url(${slice.primary.bgimage[0].bgimage2.url})`,
@@ -135,7 +134,7 @@ const HomeHeader = ({ slice }) => {
             backgroundRepeat: "no-repeat",
             zIndex: 20, // above the child images if you want it in front
           }}
-        />
+        /> */}
       </MouseParallaxContainer>
     </section>
   );
