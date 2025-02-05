@@ -39,6 +39,7 @@ export type GlobalnavDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | FeatureProjectSlice
   | OneSlice
   | ClientsSlice
   | GlobalMenuSlice
@@ -414,6 +415,26 @@ export interface OneSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image1: prismic.ImageField<never>;
+
+  /**
+   * projectfeature1 field in *Omega → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.projectfeature1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  projectfeature1: prismic.ImageField<never>;
+
+  /**
+   * projectfeature2 field in *Omega → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.projectfeature2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  projectfeature2: prismic.ImageField<never>;
 }
 
 /**

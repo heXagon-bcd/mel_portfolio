@@ -7,7 +7,7 @@
 import Image from "next/image";
 
 const Clients = ({ slice }) => {
-  console.log("iamge", slice.primary.bgimage.url);
+  console.log("iamge", slice.primary);
   return (
     <section
       className="relative p-20"
@@ -22,16 +22,19 @@ const Clients = ({ slice }) => {
         }}
       >
         <div className="flex flex-row absolute bottom-0 right-0">
-          {slice.primary.clientroster.map((item, index) => (
-            <Image
-              key={index}
-              src={item.client.url}
-              width={item.client.dimensions.width}
-              height={item.client.dimensions.height}
-              alt={item.client.alt}
-              className="object-contain"
-            />
-          ))}
+          {slice.primary.clientroster.map((item, index) => {
+            return (
+              <div key={index}>
+                <Image
+                  src={item.client.url}
+                  width={item.client.dimensions.width}
+                  height={item.client.dimensions.height}
+                  alt={item.client.alt}
+                  className="object-contain"
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

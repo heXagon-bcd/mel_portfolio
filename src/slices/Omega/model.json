@@ -19,6 +19,22 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "projectfeature1": {
+          "type": "Image",
+          "config": {
+            "label": "projectfeature1",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "projectfeature2": {
+          "type": "Image",
+          "config": {
+            "label": "projectfeature2",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}
