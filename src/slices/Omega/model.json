@@ -35,6 +35,58 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "Header",
+            "placeholder": ""
+          }
+        },
+        "copy": {
+          "type": "Group",
+          "config": {
+            "label": "copy",
+            "repeat": true,
+            "fields": {
+              "bullet1": {
+                "type": "Text",
+                "config": {
+                  "label": "bullet1",
+                  "placeholder": ""
+                }
+              },
+              "bullet2": {
+                "type": "Text",
+                "config": {
+                  "label": "bullet2",
+                  "placeholder": ""
+                }
+              },
+              "bullet3": {
+                "type": "Text",
+                "config": {
+                  "label": "bullet3",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "viewcasestudy": {
+          "type": "Text",
+          "config": {
+            "label": "ViewCaseStudy",
+            "placeholder": ""
+          }
+        },
+        "arrow": {
+          "type": "Image",
+          "config": {
+            "label": "arrow",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

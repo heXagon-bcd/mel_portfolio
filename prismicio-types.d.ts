@@ -403,6 +403,41 @@ export type HomeHeaderSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Omega → Default → Primary → copy*
+ */
+export interface OneSliceDefaultPrimaryCopyItem {
+  /**
+   * bullet1 field in *Omega → Default → Primary → copy*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.copy[].bullet1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  bullet1: prismic.KeyTextField;
+
+  /**
+   * bullet2 field in *Omega → Default → Primary → copy*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.copy[].bullet2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  bullet2: prismic.KeyTextField;
+
+  /**
+   * bullet3 field in *Omega → Default → Primary → copy*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.copy[].bullet3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  bullet3: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Omega → Default → Primary*
  */
 export interface OneSliceDefaultPrimary {
@@ -435,6 +470,46 @@ export interface OneSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   projectfeature2: prismic.ImageField<never>;
+
+  /**
+   * Header field in *Omega → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.header
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  header: prismic.KeyTextField;
+
+  /**
+   * copy field in *Omega → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.copy[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  copy: prismic.GroupField<Simplify<OneSliceDefaultPrimaryCopyItem>>;
+
+  /**
+   * ViewCaseStudy field in *Omega → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.viewcasestudy
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  viewcasestudy: prismic.KeyTextField;
+
+  /**
+   * arrow field in *Omega → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: one.default.primary.arrow
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  arrow: prismic.ImageField<never>;
 }
 
 /**
@@ -513,6 +588,7 @@ declare module "@prismicio/client" {
       HomeHeaderSliceVariation,
       HomeHeaderSliceDefault,
       OneSlice,
+      OneSliceDefaultPrimaryCopyItem,
       OneSliceDefaultPrimary,
       OneSliceVariation,
       OneSliceDefault,
