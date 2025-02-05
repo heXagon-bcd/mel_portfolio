@@ -1,8 +1,8 @@
 {
-  "id": "one",
+  "id": "feature_project",
   "type": "SharedSlice",
-  "name": "One",
-  "description": "One",
+  "name": "FeatureProject",
+  "description": "FeatureProject",
   "variations": [
     {
       "id": "default",
@@ -12,10 +12,10 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "image1": {
+        "image": {
           "type": "Image",
           "config": {
-            "label": "image1",
+            "label": "image",
             "constraint": {},
             "thumbnails": []
           }
@@ -24,14 +24,6 @@
           "type": "Image",
           "config": {
             "label": "image2",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "image3": {
-          "type": "Image",
-          "config": {
-            "label": "image3",
             "constraint": {},
             "thumbnails": []
           }

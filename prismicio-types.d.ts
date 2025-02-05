@@ -178,6 +178,61 @@ export type ClientsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *FeatureProject → Default → Primary*
+ */
+export interface FeatureProjectSliceDefaultPrimary {
+  /**
+   * image field in *FeatureProject → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_project.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * image2 field in *FeatureProject → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_project.default.primary.image2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image2: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for FeatureProject Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeatureProjectSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeatureProjectSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FeatureProject*
+ */
+type FeatureProjectSliceVariation = FeatureProjectSliceDefault;
+
+/**
+ * FeatureProject Shared Slice
+ *
+ * - **API ID**: `feature_project`
+ * - **Description**: FeatureProject
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeatureProjectSlice = prismic.SharedSlice<
+  "feature_project",
+  FeatureProjectSliceVariation
+>;
+
+/**
  * Item in *GlobalMenu → Default → Primary → menu items*
  */
 export interface GlobalMenuSliceDefaultPrimaryMenuItemsItem {
@@ -347,11 +402,11 @@ export type HomeHeaderSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *One → Default → Primary*
+ * Primary content in *Omega → Default → Primary*
  */
 export interface OneSliceDefaultPrimary {
   /**
-   * image1 field in *One → Default → Primary*
+   * image1 field in *Omega → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -359,30 +414,10 @@ export interface OneSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image1: prismic.ImageField<never>;
-
-  /**
-   * image2 field in *One → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: one.default.primary.image2
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image2: prismic.ImageField<never>;
-
-  /**
-   * image3 field in *One → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: one.default.primary.image3
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image3: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for One Slice
+ * Default variation for Omega Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -395,12 +430,12 @@ export type OneSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *One*
+ * Slice variation for *Omega*
  */
 type OneSliceVariation = OneSliceDefault;
 
 /**
- * One Shared Slice
+ * Omega Shared Slice
  *
  * - **API ID**: `one`
  * - **Description**: One
@@ -441,6 +476,10 @@ declare module "@prismicio/client" {
       ClientsSliceDefaultPrimary,
       ClientsSliceVariation,
       ClientsSliceDefault,
+      FeatureProjectSlice,
+      FeatureProjectSliceDefaultPrimary,
+      FeatureProjectSliceVariation,
+      FeatureProjectSliceDefault,
       GlobalMenuSlice,
       GlobalMenuSliceDefaultPrimaryMenuItemsItem,
       GlobalMenuSliceDefaultPrimary,

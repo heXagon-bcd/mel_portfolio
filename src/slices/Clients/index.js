@@ -10,24 +10,29 @@ const Clients = ({ slice }) => {
   console.log("iamge", slice.primary.bgimage.url);
   return (
     <section
-      className=" "
+      className="relative p-20"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       <div
-        className="h-60 bg-contain bg-no-repeat"
+        className="h-48 bg-contain bg-no-repeat"
         style={{
           backgroundImage: `url(${slice.primary.bgimage.url})`,
+          backgroundSize: "contain",
         }}
       >
-        {slice.primary.clientroster.map((item, index) => (
-          <Image
-            key={index}
-            src={item.client.url}
-            width={item.client.dimensions.width}
-            height={item.client.dimensions.height}
-          />
-        ))}
+        <div className="flex flex-row absolute bottom-0 right-0">
+          {slice.primary.clientroster.map((item, index) => (
+            <Image
+              key={index}
+              src={item.client.url}
+              width={item.client.dimensions.width}
+              height={item.client.dimensions.height}
+              alt={item.client.alt}
+              className="object-contain"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

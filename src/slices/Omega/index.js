@@ -12,25 +12,16 @@ const One = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="h-screen relative"
+      className="h-screen relative pt-20"
     >
       <div>
         <Image
           src={slice.primary.image1.url}
           width={slice.primary.image1.dimensions.width}
           height={slice.primary.image1.dimensions.height}
-        />
-        <Image
-          src={slice.primary.image2.url}
-          width={slice.primary.image2.dimensions.width}
-          height={slice.primary.image2.dimensions.height}
+          alt={slice.primary.image1.alt}
         />
       </div>
-      <Image
-        src={slice.primary.image3.url}
-        width={slice.primary.image3.dimensions.width}
-        height={slice.primary.image3.dimensions.height}
-      />
     </section>
   );
 };

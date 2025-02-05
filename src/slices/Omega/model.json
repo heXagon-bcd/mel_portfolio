@@ -1,0 +1,27 @@
+{
+  "id": "one",
+  "type": "SharedSlice",
+  "name": "Omega",
+  "description": "One",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image1": {
+          "type": "Image",
+          "config": {
+            "label": "image1",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
