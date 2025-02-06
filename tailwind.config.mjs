@@ -15,6 +15,18 @@ export default {
       fontFamily: {
         poppins: ['"Poppins"', "sans-serif"],
       },
+      height: {
+        "26rem": "26rem", // Usage: h-custom-height
+      },
+      // Custom classes for width
+      width: {
+        "26rem": "26rem", // Usage: w-custom-width
+        "28rem": "28rem", // Usage: w-custom-width
+        "30rem": "30rem", // Usage: w-custom-width
+        "32rem": "32rem", // Usage: w-custom-width
+        "34rem": "34rem", // Usage: w-custom-width
+        "36rem": "36rem", // Usage: w-custom-width
+      },
     },
   },
   plugins: [],

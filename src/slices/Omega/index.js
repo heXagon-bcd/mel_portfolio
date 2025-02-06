@@ -23,13 +23,14 @@ const One = ({ slice }) => {
           height={slice.primary.image1.dimensions.height}
           alt={slice.primary.image1.alt}
         />
-        <div className="h-96 w-96 rounded-xl border-holidaygreen border">
+        <div className="h-28rem w-28rem rounded-xl border-holidaygreen border">
           <div className="m-10">
             {slice.primary.copy.map((item, index) => (
               <div
                 key={index}
                 className="gap-2 text-holidaygreen text-xl font-normal"
               >
+                <div className="bg-holidaygreen w-28 h-2 mb-6" />
                 <p className="text-5xl italic font-sanserif">
                   {slice.primary.header}
                 </p>
