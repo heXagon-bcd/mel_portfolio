@@ -1,4 +1,5 @@
 "use client";
+
 /**
  * @typedef {import("@prismicio/client").Content.ClientsSlice} ClientsSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<ClientsSlice>} ClientsProps

@@ -1,18 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { GlobalnavDocument } from "../../../../prismicio-types";
 
-const menu = [
-  { name: "work", id: 1 },
-  { name: "about", id: 2 },
-  { name: "resume", id: 3 },
-];
+interface NavBarClientProps {
+  globalnav: GlobalnavDocument;
+}
 
-export default function NavBar() {
-  console.log("scroll height", document.documentElement.scrollHeight);
+export default function NavBarClient({ globalnav }: NavBarClientProps) {
   const [pageHeight, setPageHeight] = useState(0);
 
   useEffect(() => {
+    // console.log("scroll height", document.documentElement.scrollHeight);
     function updateHeight() {
       // documentElement.scrollHeight is the total page height,
       // including what’s off-screen and needs scrolling
@@ -23,12 +22,12 @@ export default function NavBar() {
     updateHeight();
 
     // Update if the window resizes or user scrolls
-    window.addEventListener("scroll", updateHeight());
-    window.addEventListener("resize", updateHeight());
+    window.addEventListener("scroll", updateHeight);
+    window.addEventListener("resize", updateHeight);
 
     return () => {
-      window.removeEventListener("scroll", updateHeight());
-      window.removeEventListener("resize", updateHeight());
+      window.removeEventListener("scroll", updateHeight);
+      window.removeEventListener("resize", updateHeight);
     };
   }, []);
 
@@ -39,13 +38,13 @@ export default function NavBar() {
       // Dynamically set height based on total page height
       style={{ height: pageHeight }}
     >
-      {menu.map((item) => (
+      {globalnav.data.menu_items.map((nav_item, i) => (
         <div
-          key={item.id}
+          key={nav_item.label}
           className={`text-white font-extrabold text-xl [writing-mode:vertical-rl] rotate-180 
-            ${item.id === 1 ? `pb-32 pt-32` : "pt-32"} text-center pl-4 pr-4`}
+            ${i == 0 ? `pb-32 pt-32` : "pt-32"} text-center pl-4 pr-4`}
         >
-          {item.name}
+          {nav_item.label}
         </div>
       ))}
     </div>

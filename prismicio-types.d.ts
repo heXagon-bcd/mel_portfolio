@@ -4,22 +4,35 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type GlobalnavDocumentDataSlicesSlice = GlobalMenuSlice;
+/**
+ * Item in *globalnav → menu items*
+ */
+export interface GlobalnavDocumentDataMenuItemsItem {
+  /**
+   * label field in *globalnav → menu items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: globalnav.menu_items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
 
 /**
  * Content for globalnav documents
  */
 interface GlobalnavDocumentData {
   /**
-   * Slice Zone field in *globalnav*
+   * menu items field in *globalnav*
    *
-   * - **Field Type**: Slice Zone
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: globalnav.slices[]
+   * - **API ID Path**: globalnav.menu_items[]
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
+   * - **Documentation**: https://prismic.io/docs/field#group
    */
-  slices: prismic.SliceZone<GlobalnavDocumentDataSlicesSlice>;
+  menu_items: prismic.GroupField<Simplify<GlobalnavDocumentDataMenuItemsItem>>;
 }
 
 /**
@@ -562,7 +575,7 @@ declare module "@prismicio/client" {
     export type {
       GlobalnavDocument,
       GlobalnavDocumentData,
-      GlobalnavDocumentDataSlicesSlice,
+      GlobalnavDocumentDataMenuItemsItem,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
