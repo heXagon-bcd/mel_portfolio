@@ -6,8 +6,15 @@
  * @param {ClientsProps}
  */
 import Image from "next/image";
+import { SliceComponentProps } from "@prismicio/react";
+import { Content } from "@prismicio/client";
 
-const Clients = ({ slice }) => {
+/**
+ * Props for `Clients`.
+ */
+export type ClientsProps = SliceComponentProps<Content.ClientsSlice>;
+
+const Clients = ({ slice }: ClientsProps) => {
   return (
     <section
       className="relative p-20"
@@ -25,10 +32,10 @@ const Clients = ({ slice }) => {
             return (
               <div key={`client_roster_logos_${index}`}>
                 <Image
-                  src={item.client.url}
-                  width={item.client.dimensions.width}
+                  src={item.client.url!!}
+                  width={item.client.dimensions?.width ?? 500}
                   height={100}
-                  alt={item.client.alt}
+                  alt={item.client.alt ?? "Client logo roster"}
                   className="object-contain"
                 />
               </div>
