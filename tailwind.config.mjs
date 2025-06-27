@@ -9,8 +9,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        melbg: "#FCFBFA",
+        ivory: "#FCFBFA",
         holidaygreen: "#2E6A68",
+        beige: "#E3E3D6",
+        darkGrey: "#616161",
       },
       fontFamily: {
         poppins: ['"Poppins"', "sans-serif"],

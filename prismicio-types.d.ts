@@ -55,7 +55,6 @@ type HomeDocumentDataSlicesSlice =
   | FeatureProjectSlice
   | OneSlice
   | ClientsSlice
-  | GlobalMenuSlice
   | HomeHeaderSlice;
 
 /**
@@ -247,68 +246,6 @@ export type FeatureProjectSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *GlobalMenu → Default → Primary → menu items*
- */
-export interface GlobalMenuSliceDefaultPrimaryMenuItemsItem {
-  /**
-   * menu items field in *GlobalMenu → Default → Primary → menu items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: global_menu.default.primary.menu_items[].menu_items
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  menu_items: prismic.Repeatable<prismic.LinkField>;
-}
-
-/**
- * Primary content in *GlobalMenu → Default → Primary*
- */
-export interface GlobalMenuSliceDefaultPrimary {
-  /**
-   * menu items field in *GlobalMenu → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: global_menu.default.primary.menu_items[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  menu_items: prismic.GroupField<
-    Simplify<GlobalMenuSliceDefaultPrimaryMenuItemsItem>
-  >;
-}
-
-/**
- * Default variation for GlobalMenu Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type GlobalMenuSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<GlobalMenuSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *GlobalMenu*
- */
-type GlobalMenuSliceVariation = GlobalMenuSliceDefault;
-
-/**
- * GlobalMenu Shared Slice
- *
- * - **API ID**: `global_menu`
- * - **Description**: GlobalMenu
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type GlobalMenuSlice = prismic.SharedSlice<
-  "global_menu",
-  GlobalMenuSliceVariation
->;
-
-/**
  * Item in *HomeHeader → Default → Primary → images*
  */
 export interface HomeHeaderSliceDefaultPrimaryImagesItem {
@@ -383,6 +320,16 @@ export interface HomeHeaderSliceDefaultPrimary {
   bgimage: prismic.GroupField<
     Simplify<HomeHeaderSliceDefaultPrimaryBgimageItem>
   >;
+
+  /**
+   * bg_image field in *HomeHeader → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_header.default.primary.bg_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  bg_image: prismic.ImageField<never>;
 }
 
 /**
@@ -589,11 +536,6 @@ declare module "@prismicio/client" {
       FeatureProjectSliceDefaultPrimary,
       FeatureProjectSliceVariation,
       FeatureProjectSliceDefault,
-      GlobalMenuSlice,
-      GlobalMenuSliceDefaultPrimaryMenuItemsItem,
-      GlobalMenuSliceDefaultPrimary,
-      GlobalMenuSliceVariation,
-      GlobalMenuSliceDefault,
       HomeHeaderSlice,
       HomeHeaderSliceDefaultPrimaryImagesItem,
       HomeHeaderSliceDefaultPrimaryBgimageItem,

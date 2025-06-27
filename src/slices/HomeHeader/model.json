@@ -60,6 +60,14 @@
               }
             }
           }
+        },
+        "bg_image": {
+          "type": "Image",
+          "config": {
+            "label": "bg_image",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

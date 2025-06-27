@@ -34,14 +34,14 @@ export default function NavBarClient({ globalnav }: NavBarClientProps) {
   return (
     <div
       // Pin the bar to the left
-      className="bg-holidaygreen sticky top-0 left-0 w-16"
+      className="bg-beige sticky top-0 left-0 w-16"
       // Dynamically set height based on total page height
       style={{ height: pageHeight }}
     >
       {globalnav.data.menu_items.map((nav_item, i) => (
         <div
           key={nav_item.label}
-          className={`text-white font-extrabold text-xl [writing-mode:vertical-rl] rotate-180 
+          className={`text-darkGrey font-extrabold text-xl [writing-mode:vertical-rl] rotate-180 
             ${i == 0 ? `pb-32 pt-32` : "pt-32"} text-center pl-4 pr-4`}
         >
           {nav_item.label}

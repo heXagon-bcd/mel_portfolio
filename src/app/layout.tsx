@@ -18,12 +18,14 @@ export const metadata = {
   description: "Melody Tam, award winning UX artist",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`bg-ivory ${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>

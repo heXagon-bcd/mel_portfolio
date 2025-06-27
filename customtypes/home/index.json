@@ -20,9 +20,6 @@
             "clients": {
               "type": "SharedSlice"
             },
-            "global_menu": {
-              "type": "SharedSlice"
-            },
             "home_header": {
               "type": "SharedSlice"
             }

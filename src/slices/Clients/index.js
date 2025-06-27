@@ -8,7 +8,7 @@
 import Image from "next/image";
 
 const Clients = ({ slice }) => {
-  console.log("iamge", slice.primary);
+  // console.log("iamge", slice.primary);
   return (
     <section
       className="relative p-20"
