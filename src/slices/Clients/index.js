@@ -8,7 +8,6 @@
 import Image from "next/image";
 
 const Clients = ({ slice }) => {
-  // console.log("iamge", slice.primary);
   return (
     <section
       className="relative p-20"
@@ -16,20 +15,19 @@ const Clients = ({ slice }) => {
       data-slice-variation={slice.variation}
     >
       <div
-        className="h-48 bg-contain bg-no-repeat"
         style={{
           backgroundImage: `url(${slice.primary.bgImage.url})`,
-          backgroundSize: "50%",
         }}
+        className="h-48 bg-contain bg-no-repeat bg-[length:100%] lg:bg-[length:60%] "
       >
-        <div className="flex flex-row absolute bottom-0 right-0">
+        <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 lg:gap-4 pt-12 sm:pt-20 lg:pt-12 lg:pl-20 items-center justify-items-center">
           {slice.primary.clientRoster.map((item, index) => {
             return (
-              <div key={index}>
+              <div key={`client_roster_logos_${index}`}>
                 <Image
                   src={item.client.url}
                   width={item.client.dimensions.width}
-                  height={item.client.dimensions.height}
+                  height={100}
                   alt={item.client.alt}
                   className="object-contain"
                 />
