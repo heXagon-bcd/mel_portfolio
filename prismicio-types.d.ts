@@ -121,13 +121,13 @@ export type AllDocumentTypes = GlobalnavDocument | HomeDocument;
 /**
  * Item in *Clients → Default → Primary → clientRoster*
  */
-export interface ClientsSliceDefaultPrimaryClientrosterItem {
+export interface ClientsSliceDefaultPrimaryClientRosterItem {
   /**
    * image field in *Clients → Default → Primary → clientRoster*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: clients.default.primary.clientroster[].client
+   * - **API ID Path**: clients.default.primary.clientRoster[].client
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   client: prismic.ImageField<never>;
@@ -138,25 +138,25 @@ export interface ClientsSliceDefaultPrimaryClientrosterItem {
  */
 export interface ClientsSliceDefaultPrimary {
   /**
-   * bgimage field in *Clients → Default → Primary*
+   * bgImage field in *Clients → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: clients.default.primary.bgimage
+   * - **API ID Path**: clients.default.primary.bgImage
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  bgimage: prismic.ImageField<never>;
+  bgImage: prismic.ImageField<never>;
 
   /**
    * clientRoster field in *Clients → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: clients.default.primary.clientroster[]
+   * - **API ID Path**: clients.default.primary.clientRoster[]
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  clientroster: prismic.GroupField<
-    Simplify<ClientsSliceDefaultPrimaryClientrosterItem>
+  clientRoster: prismic.GroupField<
+    Simplify<ClientsSliceDefaultPrimaryClientRosterItem>
   >;
 }
 
@@ -261,31 +261,6 @@ export interface HomeHeaderSliceDefaultPrimaryImagesItem {
 }
 
 /**
- * Item in *HomeHeader → Default → Primary → bgimage*
- */
-export interface HomeHeaderSliceDefaultPrimaryBgimageItem {
-  /**
-   * bgimage field in *HomeHeader → Default → Primary → bgimage*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_header.default.primary.bgimage[].bgimage
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  bgimage: prismic.ImageField<never>;
-
-  /**
-   * bgimage2 field in *HomeHeader → Default → Primary → bgimage*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_header.default.primary.bgimage[].bgimage2
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  bgimage2: prismic.ImageField<never>;
-}
-
-/**
  * Primary content in *HomeHeader → Default → Primary*
  */
 export interface HomeHeaderSliceDefaultPrimary {
@@ -310,26 +285,24 @@ export interface HomeHeaderSliceDefaultPrimary {
   images: prismic.GroupField<Simplify<HomeHeaderSliceDefaultPrimaryImagesItem>>;
 
   /**
-   * bgimage field in *HomeHeader → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_header.default.primary.bgimage[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  bgimage: prismic.GroupField<
-    Simplify<HomeHeaderSliceDefaultPrimaryBgimageItem>
-  >;
-
-  /**
-   * bg_image field in *HomeHeader → Default → Primary*
+   * bgImage field in *HomeHeader → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_header.default.primary.bg_image
+   * - **API ID Path**: home_header.default.primary.bgImage
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  bg_image: prismic.ImageField<never>;
+  bgImage: prismic.ImageField<never>;
+
+  /**
+   * buttonImage field in *HomeHeader → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_header.default.primary.buttonImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  buttonImage: prismic.ImageField<never>;
 }
 
 /**
@@ -528,7 +501,7 @@ declare module "@prismicio/client" {
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
       ClientsSlice,
-      ClientsSliceDefaultPrimaryClientrosterItem,
+      ClientsSliceDefaultPrimaryClientRosterItem,
       ClientsSliceDefaultPrimary,
       ClientsSliceVariation,
       ClientsSliceDefault,
@@ -538,7 +511,6 @@ declare module "@prismicio/client" {
       FeatureProjectSliceDefault,
       HomeHeaderSlice,
       HomeHeaderSliceDefaultPrimaryImagesItem,
-      HomeHeaderSliceDefaultPrimaryBgimageItem,
       HomeHeaderSliceDefaultPrimary,
       HomeHeaderSliceVariation,
       HomeHeaderSliceDefault,

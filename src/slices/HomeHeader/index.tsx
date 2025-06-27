@@ -14,6 +14,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { HomeHeaderSliceDefaultPrimaryImagesItem, Simplify } from "../../../prismicio-types";
 
+// TODO: mobile version...
 /**
  * Props for `HomeHeader`.
  */
@@ -28,7 +29,7 @@ const HomeHeader = ({ slice }: HomeHeaderProps) => {
     const key = `parallax_image_${index}`;
     const image = <Image
         src={item.image.url}
-        alt="header image"
+        alt={`Header image for ${key}`}
         width={item.image.dimensions?.width ?? 200}
         height={item.image.dimensions?.height ?? 200}
       />;
@@ -96,30 +97,41 @@ const HomeHeader = ({ slice }: HomeHeaderProps) => {
 
   return (
     <section
-      className="h-max relative"
+      className="min-h-screen flex flex-col justify-between"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div data-scroll className="font-bold mt-8 mb-2 text-center">
+      <div data-scroll className="font-bold mt-8 text-center">
         {slice.primary.header}
       </div>
-      <MouseParallaxContainer globalFactorX={0.3} globalFactorY={0.3}>
-        <MouseParallaxChild
-          factorX={0.1}
-          factorY={0.1}
-          className="h-[48rem] relative"
-          style={{
-            backgroundImage: `url(${slice.primary.bg_image.url})`,
-            backgroundSize: "90%",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
-        >
-          {slice.primary.images.map((item, index) => (
-            renderParallaxImage(item, index)
-          ))}
-        </MouseParallaxChild>
-      </MouseParallaxContainer>
+      <div className="h-5/6">
+        <MouseParallaxContainer globalFactorX={0.3} globalFactorY={0.3}>
+          <MouseParallaxChild
+            factorX={0.1}
+            factorY={0.1}
+            className="h-[48rem] relative"
+            style={{
+              backgroundImage: `url(${slice.primary.bgImage.url})`,
+              backgroundSize: "90%",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          >
+            {slice.primary.images.map((item, index) => (
+              renderParallaxImage(item, index)
+            ))}
+          </MouseParallaxChild>
+        </MouseParallaxContainer>
+      </div>
+      <div className="h-1/6 flex items-center justify-center -mt-8">
+        {/*TODO: link*/}
+        <Image
+          src={slice.primary.buttonImage.url!!}
+          alt="Button image for header"
+          width={130}
+          height={130}
+        />
+      </div>
     </section>
   );
 };

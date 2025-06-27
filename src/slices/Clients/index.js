@@ -18,12 +18,12 @@ const Clients = ({ slice }) => {
       <div
         className="h-48 bg-contain bg-no-repeat"
         style={{
-          backgroundImage: `url(${slice.primary.bgimage.url})`,
-          backgroundSize: "contain",
+          backgroundImage: `url(${slice.primary.bgImage.url})`,
+          backgroundSize: "50%",
         }}
       >
         <div className="flex flex-row absolute bottom-0 right-0">
-          {slice.primary.clientroster.map((item, index) => {
+          {slice.primary.clientRoster.map((item, index) => {
             return (
               <div key={index}>
                 <Image

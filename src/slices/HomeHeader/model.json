@@ -36,35 +36,18 @@
             }
           }
         },
-        "bgimage": {
-          "type": "Group",
-          "config": {
-            "label": "bgimage",
-            "repeat": true,
-            "fields": {
-              "bgimage": {
-                "type": "Image",
-                "config": {
-                  "label": "bgimage",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              },
-              "bgimage2": {
-                "type": "Image",
-                "config": {
-                  "label": "bgimage2",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              }
-            }
-          }
-        },
-        "bg_image": {
+        "bgImage": {
           "type": "Image",
           "config": {
-            "label": "bg_image",
+            "label": "bgImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "buttonImage": {
+          "type": "Image",
+          "config": {
+            "label": "buttonImage",
             "constraint": {},
             "thumbnails": []
           }
