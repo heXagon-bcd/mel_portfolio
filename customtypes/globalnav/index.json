@@ -6,10 +6,10 @@
   "status": true,
   "json": {
     "Main": {
-      "menu_items": {
+      "menuItems": {
         "type": "Group",
         "config": {
-          "label": "menu items",
+          "label": "menuItems",
           "repeat": true,
           "fields": {
             "label": {

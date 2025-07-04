@@ -123,7 +123,7 @@ const HomeHeader = ({ slice }: HomeHeaderProps) => {
           </MouseParallaxChild>
         </MouseParallaxContainer>
       </div>
-      <div className="h-1/6 flex items-center justify-center -mt-8">
+      <div className="h-1/6 flex items-center justify-center -mt-12">
         {/*TODO: link*/}
         <Image
           src={slice.primary.buttonImage.url!!}

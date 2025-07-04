@@ -5,15 +5,15 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
- * Item in *globalnav → menu items*
+ * Item in *globalnav → menuItems*
  */
 export interface GlobalnavDocumentDataMenuItemsItem {
   /**
-   * label field in *globalnav → menu items*
+   * label field in *globalnav → menuItems*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: globalnav.menu_items[].label
+   * - **API ID Path**: globalnav.menuItems[].label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
@@ -24,15 +24,15 @@ export interface GlobalnavDocumentDataMenuItemsItem {
  */
 interface GlobalnavDocumentData {
   /**
-   * menu items field in *globalnav*
+   * menuItems field in *globalnav*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: globalnav.menu_items[]
+   * - **API ID Path**: globalnav.menuItems[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  menu_items: prismic.GroupField<Simplify<GlobalnavDocumentDataMenuItemsItem>>;
+  menuItems: prismic.GroupField<Simplify<GlobalnavDocumentDataMenuItemsItem>>;
 }
 
 /**
@@ -52,6 +52,8 @@ export type GlobalnavDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | ProjectBarSlice
+  | CaseStudiesSlice
   | FeatureProjectSlice
   | OneSlice
   | ClientsSlice
@@ -117,6 +119,145 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 export type AllDocumentTypes = GlobalnavDocument | HomeDocument;
+
+/**
+ * Item in *CaseStudies → Default → Primary → mainCaseStudies*
+ */
+export interface CaseStudiesSliceDefaultPrimaryMainCaseStudiesItem {
+  /**
+   * caseStudyNumberImage field in *CaseStudies → Default → Primary → mainCaseStudies*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.mainCaseStudies[].caseStudyNumberImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  caseStudyNumberImage: prismic.ImageField<never>;
+
+  /**
+   * caseStudyImage field in *CaseStudies → Default → Primary → mainCaseStudies*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.mainCaseStudies[].caseStudyImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  caseStudyImage: prismic.ImageField<never>;
+
+  /**
+   * caseStudyTitle field in *CaseStudies → Default → Primary → mainCaseStudies*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.mainCaseStudies[].caseStudyTitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  caseStudyTitle: prismic.RichTextField;
+
+  /**
+   * caseStudyContent field in *CaseStudies → Default → Primary → mainCaseStudies*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.mainCaseStudies[].caseStudyContent
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  caseStudyContent: prismic.RichTextField;
+}
+
+/**
+ * Item in *CaseStudies → Default → Primary → additionalCaseStudyThumbnails*
+ */
+export interface CaseStudiesSliceDefaultPrimaryAdditionalCaseStudyThumbnailsItem {
+  /**
+   * thumbnail field in *CaseStudies → Default → Primary → additionalCaseStudyThumbnails*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.additionalCaseStudyThumbnails[].thumbnail
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  thumbnail: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *CaseStudies → Default → Primary*
+ */
+export interface CaseStudiesSliceDefaultPrimary {
+  /**
+   * key field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.key
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  key: prismic.KeyTextField;
+
+  /**
+   * categoryHeader field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.categoryHeader
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  categoryHeader: prismic.ImageField<never>;
+
+  /**
+   * mainCaseStudies field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.mainCaseStudies[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  mainCaseStudies: prismic.GroupField<
+    Simplify<CaseStudiesSliceDefaultPrimaryMainCaseStudiesItem>
+  >;
+
+  /**
+   * additionalCaseStudyThumbnails field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.additionalCaseStudyThumbnails[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  additionalCaseStudyThumbnails: prismic.GroupField<
+    Simplify<CaseStudiesSliceDefaultPrimaryAdditionalCaseStudyThumbnailsItem>
+  >;
+}
+
+/**
+ * Default variation for CaseStudies Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CaseStudiesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CaseStudiesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CaseStudies*
+ */
+type CaseStudiesSliceVariation = CaseStudiesSliceDefault;
+
+/**
+ * CaseStudies Shared Slice
+ *
+ * - **API ID**: `case_studies`
+ * - **Description**: CaseStudies
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CaseStudiesSlice = prismic.SharedSlice<
+  "case_studies",
+  CaseStudiesSliceVariation
+>;
 
 /**
  * Item in *Clients → Default → Primary → clientRoster*
@@ -472,6 +613,68 @@ type OneSliceVariation = OneSliceDefault;
  */
 export type OneSlice = prismic.SharedSlice<"one", OneSliceVariation>;
 
+/**
+ * Item in *ProjectBar → Default → Primary → projectItems*
+ */
+export interface ProjectBarSliceDefaultPrimaryProjectItemsItem {
+  /**
+   * label field in *ProjectBar → Default → Primary → projectItems*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_bar.default.primary.projectItems[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ProjectBar → Default → Primary*
+ */
+export interface ProjectBarSliceDefaultPrimary {
+  /**
+   * projectItems field in *ProjectBar → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_bar.default.primary.projectItems[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  projectItems: prismic.GroupField<
+    Simplify<ProjectBarSliceDefaultPrimaryProjectItemsItem>
+  >;
+}
+
+/**
+ * Default variation for ProjectBar Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectBarSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectBarSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ProjectBar*
+ */
+type ProjectBarSliceVariation = ProjectBarSliceDefault;
+
+/**
+ * ProjectBar Shared Slice
+ *
+ * - **API ID**: `project_bar`
+ * - **Description**: ProjectBar
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectBarSlice = prismic.SharedSlice<
+  "project_bar",
+  ProjectBarSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -500,6 +703,12 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CaseStudiesSlice,
+      CaseStudiesSliceDefaultPrimaryMainCaseStudiesItem,
+      CaseStudiesSliceDefaultPrimaryAdditionalCaseStudyThumbnailsItem,
+      CaseStudiesSliceDefaultPrimary,
+      CaseStudiesSliceVariation,
+      CaseStudiesSliceDefault,
       ClientsSlice,
       ClientsSliceDefaultPrimaryClientRosterItem,
       ClientsSliceDefaultPrimary,
@@ -519,6 +728,11 @@ declare module "@prismicio/client" {
       OneSliceDefaultPrimary,
       OneSliceVariation,
       OneSliceDefault,
+      ProjectBarSlice,
+      ProjectBarSliceDefaultPrimaryProjectItemsItem,
+      ProjectBarSliceDefaultPrimary,
+      ProjectBarSliceVariation,
+      ProjectBarSliceDefault,
     };
   }
 }

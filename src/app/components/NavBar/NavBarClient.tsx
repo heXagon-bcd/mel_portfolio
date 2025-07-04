@@ -7,6 +7,7 @@ interface NavBarClientProps {
   globalnav: GlobalnavDocument;
 }
 
+// TODO: sticky
 export default function NavBarClient({ globalnav }: NavBarClientProps) {
   const [pageHeight, setPageHeight] = useState(0);
 
@@ -38,7 +39,7 @@ export default function NavBarClient({ globalnav }: NavBarClientProps) {
       // Dynamically set height based on total page height
       style={{ height: pageHeight }}
     >
-      {globalnav.data.menu_items.map((nav_item, i) => (
+      {globalnav.data.menuItems.map((nav_item, i) => (
         <div
           key={nav_item.label}
           className={`text-darkGrey font-extrabold text-xl [writing-mode:vertical-rl] rotate-180 

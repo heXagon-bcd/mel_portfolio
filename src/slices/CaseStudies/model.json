@@ -1,0 +1,94 @@
+{
+  "id": "case_studies",
+  "type": "SharedSlice",
+  "name": "CaseStudies",
+  "description": "CaseStudies",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "key": {
+          "type": "Text",
+          "config": {
+            "label": "key",
+            "placeholder": ""
+          }
+        },
+        "categoryHeader": {
+          "type": "Image",
+          "config": {
+            "label": "categoryHeader",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "mainCaseStudies": {
+          "type": "Group",
+          "config": {
+            "label": "mainCaseStudies",
+            "repeat": true,
+            "fields": {
+              "caseStudyNumberImage": {
+                "type": "Image",
+                "config": {
+                  "label": "caseStudyNumberImage",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "caseStudyImage": {
+                "type": "Image",
+                "config": {
+                  "label": "caseStudyImage",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "caseStudyTitle": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "caseStudyTitle",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "caseStudyContent": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "caseStudyContent",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              }
+            }
+          }
+        },
+        "additionalCaseStudyThumbnails": {
+          "type": "Group",
+          "config": {
+            "label": "additionalCaseStudyThumbnails",
+            "repeat": true,
+            "fields": {
+              "thumbnail": {
+                "type": "Image",
+                "config": {
+                  "label": "thumbnail",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

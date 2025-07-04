@@ -1,0 +1,35 @@
+{
+  "id": "project_bar",
+  "type": "SharedSlice",
+  "name": "ProjectBar",
+  "description": "ProjectBar",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "projectItems": {
+          "type": "Group",
+          "config": {
+            "label": "projectItems",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
