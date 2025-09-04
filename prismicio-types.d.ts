@@ -147,12 +147,12 @@ export interface CaseStudiesSliceDefaultPrimaryMainCaseStudiesItem {
   /**
    * caseStudyTitle field in *CaseStudies → Default → Primary → mainCaseStudies*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: case_studies.default.primary.mainCaseStudies[].caseStudyTitle
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  caseStudyTitle: prismic.RichTextField;
+  caseStudyTitle: prismic.KeyTextField;
 
   /**
    * caseStudyContent field in *CaseStudies → Default → Primary → mainCaseStudies*
@@ -163,6 +163,16 @@ export interface CaseStudiesSliceDefaultPrimaryMainCaseStudiesItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   caseStudyContent: prismic.RichTextField;
+
+  /**
+   * alignment field in *CaseStudies → Default → Primary → mainCaseStudies*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_studies.default.primary.mainCaseStudies[].alignment
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  alignment: prismic.SelectField<"left" | "right">;
 }
 
 /**
@@ -215,6 +225,16 @@ export interface CaseStudiesSliceDefaultPrimary {
   mainCaseStudies: prismic.GroupField<
     Simplify<CaseStudiesSliceDefaultPrimaryMainCaseStudiesItem>
   >;
+
+  /**
+   * buttonText field in *CaseStudies → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: VIEW CASE STUDY
+   * - **API ID Path**: case_studies.default.primary.buttonText
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttonText: prismic.KeyTextField;
 
   /**
    * additionalCaseStudyThumbnails field in *CaseStudies → Default → Primary*
@@ -570,10 +590,10 @@ export interface OneSliceDefaultPrimary {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: one.default.primary.viewcasestudy
+   * - **API ID Path**: one.default.primary.viewCaseStudy
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  viewcasestudy: prismic.KeyTextField;
+  viewCaseStudy: prismic.KeyTextField;
 
   /**
    * arrow field in *Omega → Default → Primary*

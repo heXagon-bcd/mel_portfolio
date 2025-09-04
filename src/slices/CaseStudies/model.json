@@ -50,12 +50,10 @@
                 }
               },
               "caseStudyTitle": {
-                "type": "StructuredText",
+                "type": "Text",
                 "config": {
                   "label": "caseStudyTitle",
-                  "placeholder": "",
-                  "allowTargetBlank": true,
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  "placeholder": ""
                 }
               },
               "caseStudyContent": {
@@ -66,8 +64,26 @@
                   "allowTargetBlank": true,
                   "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
                 }
+              },
+              "alignment": {
+                "type": "Select",
+                "config": {
+                  "label": "alignment",
+                  "placeholder": "",
+                  "options": [
+                    "left",
+                    "right"
+                  ]
+                }
               }
             }
+          }
+        },
+        "buttonText": {
+          "type": "Text",
+          "config": {
+            "label": "buttonText",
+            "placeholder": "VIEW CASE STUDY"
           }
         },
         "additionalCaseStudyThumbnails": {

@@ -111,13 +111,7 @@
 					}
 				]
 			},
-			"viewcasestudy": {
-				"__TYPE__": "FieldContent",
-				"value": "leg",
-				"type": "Text"
-			},
 			"arrow": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
@@ -135,7 +129,15 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"viewCaseStudy": {
+				"__TYPE__": "FieldContent",
+				"value": "tent",
+				"type": "Text"
 			}
 		},
 		"items": []

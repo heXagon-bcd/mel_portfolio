@@ -76,17 +76,19 @@
 								}
 							],
 							[
+								"alignment",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "left",
+									"type": "Select"
+								}
+							],
+							[
 								"caseStudyTitle",
 								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Ut ex quis dolore dolore aute ea commodo qui."
-											}
-										}
-									]
+									"__TYPE__": "FieldContent",
+									"value": "check",
+									"type": "Text"
 								}
 							]
 						]
@@ -116,6 +118,16 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
+			"key": {
+				"__TYPE__": "FieldContent",
+				"value": "symbol",
+				"type": "Text"
+			},
+			"buttonText": {
+				"__TYPE__": "FieldContent",
+				"value": "still",
+				"type": "Text"
+			},
 			"additionalCaseStudyThumbnails": {
 				"__TYPE__": "GroupContentType",
 				"value": [
@@ -125,15 +137,16 @@
 							[
 								"thumbnail",
 								{
+									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
-										"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
-										"width": 4752,
-										"height": 3168
+										"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+										"width": 3456,
+										"height": 3456
 									},
-									"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
-									"width": 4752,
-									"height": 3168,
+									"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+									"width": 3456,
+									"height": 3456,
 									"edit": {
 										"zoom": 1,
 										"crop": {
@@ -142,20 +155,12 @@
 										},
 										"background": "transparent"
 									},
-									"credits": null,
-									"alt": null,
-									"__TYPE__": "ImageContent",
 									"thumbnails": {}
 								}
 							]
 						]
 					}
 				]
-			},
-			"key": {
-				"__TYPE__": "FieldContent",
-				"value": "symbol",
-				"type": "Text"
 			}
 		},
 		"items": []

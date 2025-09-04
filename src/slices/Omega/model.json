@@ -73,7 +73,7 @@
             }
           }
         },
-        "viewcasestudy": {
+        "viewCaseStudy": {
           "type": "Text",
           "config": {
             "label": "ViewCaseStudy",
