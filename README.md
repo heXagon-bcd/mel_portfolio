@@ -1,6 +1,6 @@
 ## Mel's Portfolio
 **Design**: [Figma link](https://mel-portfolio-six.vercel.app/)
-![Screenshot 2025-09-03 at 11.56.17 PM.png](..%2F..%2F..%2FDesktop%2FScreenshot%202025-09-03%20at%2011.56.17%E2%80%AFPM.png)
+![thumbnail.png](thumbnail.png)
 
 ## Getting Started
 
