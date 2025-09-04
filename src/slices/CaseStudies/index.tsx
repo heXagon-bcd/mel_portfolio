@@ -6,7 +6,6 @@ import GreenLine from "../../../public/green_line.png";
 import Image from "next/image";
 import {KeyTextField} from "@prismicio/types";
 import { FaArrowRightLong } from "react-icons/fa6";
-import main from "slice-machine-ui/.storybook/main.ts";
 
 /**
  * Props for `CaseStudies`.
