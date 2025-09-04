@@ -1,8 +1,8 @@
 {
-  "id": "global_menu",
+  "id": "project_bar",
   "type": "SharedSlice",
-  "name": "GlobalMenu",
-  "description": "GlobalMenu",
+  "name": "ProjectBar",
+  "description": "ProjectBar",
   "variations": [
     {
       "id": "default",
@@ -12,21 +12,17 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "menu_items": {
+        "projectItems": {
           "type": "Group",
           "config": {
-            "label": "menu items",
+            "label": "projectItems",
             "repeat": true,
             "fields": {
-              "menu_items": {
-                "type": "Link",
+              "label": {
+                "type": "Text",
                 "config": {
-                  "label": "menu items",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": true
+                  "label": "label",
+                  "placeholder": ""
                 }
               }
             }

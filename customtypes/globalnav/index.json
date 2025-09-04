@@ -6,13 +6,18 @@
   "status": true,
   "json": {
     "Main": {
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
+      "menuItems": {
+        "type": "Group",
         "config": {
-          "choices": {
-            "global_menu": {
-              "type": "SharedSlice"
+          "label": "menuItems",
+          "repeat": true,
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
+              }
             }
           }
         }

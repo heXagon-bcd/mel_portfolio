@@ -12,15 +12,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "bgimage": {
+        "bgImage": {
           "type": "Image",
           "config": {
-            "label": "bgimage",
+            "label": "bgImage",
             "constraint": {},
             "thumbnails": []
           }
         },
-        "clientroster": {
+        "clientRoster": {
           "type": "Group",
           "config": {
             "label": "clientRoster",

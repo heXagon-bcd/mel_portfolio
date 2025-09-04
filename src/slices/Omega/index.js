@@ -8,7 +8,7 @@
 import Image from "next/image";
 
 const One = ({ slice }) => {
-  console.log("slice project feature", slice.primary.projectfeature1);
+  // console.log("slice project feature", slice.primary.projectfeature1);
   return (
     <section
       data-slice-type={slice.slice_type}
